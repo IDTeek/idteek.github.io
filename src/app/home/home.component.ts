@@ -1,12 +1,4 @@
 import { Component } from '@angular/core';
-import {
-  CarouselComponent,
-  CarouselControlComponent,
-  CarouselIndicatorsComponent,
-  CarouselInnerComponent,
-  CarouselItemComponent,
-  ThemeDirective
-} from '@coreui/angular';
 
 @Component({
   selector: 'app-home',

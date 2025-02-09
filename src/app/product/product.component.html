@@ -1,1 +1,76 @@
-<p>product works!</p>
+<div class="background-slides">
+  <div class="slide" #currentBg>
+    <img *ngFor="let image of images" [src]="image" />
+    <!-- <img [src]="slides[currentCategoryIndex].scenes[currentSceneIndex].bg" [alt]="slides[currentCategoryIndex].scenes[currentSceneIndex].scene" #currentBg>
+        <img [src]="slides[prevCategoryIndex].scenes[prevSceneIndex].bg" [alt]="slides[prevCategoryIndex].scenes[prevSceneIndex].scene" #prevBg> -->
+  </div>
+</div>
+
+<div class="foreground-image-container">
+  <div class="slide" #foregroundContent>
+    <img class="foreground-image" *ngFor="let content of contents" [src]="content.image" [alt]="content.title" #imageElem>
+  </div>
+</div>
+
+<div class="foreground-overlay">
+  <div class="slide" #foregroundOverlayContent>
+    <img class="foreground-image" src="assets/scene_foreground/meet_front.png" alt="Meeting Table" style="transform: translateY(1000px)" #foregroundMeetOverlay>
+  </div>
+</div>
+<div class="foreground-shadow"></div>
+<div class="foreground-content">
+  <div *ngFor="let content of contents" class="description" #contentElem>
+    <div class="text-description">
+      <h1>{{content.title}}</h1>
+      <p>{{content.content}}</p>
+    </div>
+    <!-- <div class="icon">
+        <img [src]="content.icon" [alt]="content.title">
+      </div> -->
+  </div>
+  <!-- Add more content here -->
+</div>
+
+<div class="guide-bar">
+  <div class="category-item">
+    <div class="guide-bar-item arrow" style="padding-top: 10px;" (click)="shiftScene(-1)">
+      <mat-icon>
+        arrow_upward
+      </mat-icon>
+      <h2>Previous</h2>
+    </div>
+
+  </div>
+  <div *ngFor="let category of guideBar" class="category-item"
+    [style]="{'background-color': display_category === category.index ? 'rgba(255,255,255,0.3)' : 'transparent'}">
+    <div>
+      <div class="guide-bar-item" (click)="changeCategory(category.index)"
+        [style]="{'border-bottom': display_category === category.index ? 'solid 1px white' : ''}">
+        <mat-icon>
+          {{category.icon}}
+        </mat-icon>
+        <h2>{{category.title}}</h2>
+      </div>
+    </div>
+    <div *ngFor="let item of category.item" (click)="changeScene(item.index)" class="guide-bar-item"
+      [style]="{'display': display_category === item.category ? 'flex' : 'none'}"
+      [ngClass]="{'active': display_scene === item.index ? 'false' : 'true'}">
+      <mat-icon>
+        {{item.icon}}
+      </mat-icon>
+      <h2>{{item.title}}</h2>
+    </div>
+
+
+  </div>
+  <div class="category-item">
+    <div class="guide-bar-item arrow" style="padding-bottom: 10px;" (click)="shiftScene(1)">
+      <mat-icon>
+        arrow_downward
+      </mat-icon>
+      <h2>Next</h2>
+    </div>
+
+  </div>
+
+</div>
