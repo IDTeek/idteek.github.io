@@ -2,7 +2,7 @@
 export default {
   bootstrap: () => import('./main.server.mjs').then(m => m.default),
   inlineCriticalCss: true,
-  baseHref: '/your_project_name/',
+  baseHref: '/',
   locale: undefined,
   routes: undefined,
   entryPointToBrowserMapping: {
@@ -14,8 +14,8 @@ export default {
   ]
 },
   assets: {
-    'index.csr.html': {size: 24240, hash: '665226e379746d6490a61472ecd10b1936b407708bf4e1e4115622f366ec6929', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 17800, hash: '54477bbcca5f02064ebdac8fec2b783e49d371647b43aac2e6bfbd80dd8c5e50', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 24222, hash: '0a1de5bfbda438797d5638d7eb468e3f58bd86293cf6bd66f68276253552bbb3', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 17782, hash: '31b9da382dfa05d63f74a85f105440c64df29e80e05eb04f56224a7ae4782402', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
     'styles-LPD574KJ.css': {size: 6993, hash: 'n1oVF+7bQ38', text: () => import('./assets-chunks/styles-LPD574KJ_css.mjs').then(m => m.default)}
   },
 };

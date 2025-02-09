@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/your_project_name',
+  basePath: '/',
   supportedLocales: {
   "en-US": ""
 },
