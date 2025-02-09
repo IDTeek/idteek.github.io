@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/your_project_name": {},
+    "/your_project_name/contact": {},
+    "/your_project_name/product": {},
+    "/your_project_name/software": {}
+  }
+}
